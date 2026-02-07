@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(120deg, #74ebd5, #9face6);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-card {
+      background: #fff;
+      width: 420px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4a6cf7;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .info p {
+      font-size: 15px;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .info b {
+      color: #222;
+      display: inline-block;
+      width: 80px;
+    }
+
+    .logout-btn {
+      margin-top: 25px;
+      padding: 10px;
+      width: 100%;
+      background: #e03131;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: #c92a2a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="profile-card">
+    <h2>Student Profile</h2>
+
+    <img 
+      src="/uploads/<%= student.photo %>" 
+      alt="Profile Photo"
+      class="profile-img"
+    >
+
+    <div class="info">
+      <p><b>Name:</b> <%= student.name %></p>
+      <p><b>Email:</b> <%= student.email %></p>
+      <p><b>Phone:</b> <%= student.phone %></p>
+      <p><b>Gender:</b> <%= student.gender %></p>
+    </div>
+
+    <button class="logout-btn" onclick="window.location.href='/login'">
+      Logout
+    </button>
+  </div>
+
+</body>
+</html>
